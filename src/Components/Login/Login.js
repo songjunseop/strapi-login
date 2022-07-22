@@ -29,11 +29,11 @@ function Login() {
             });
     }
 
-    useEffect(() => {
-        axios.get('http://localhost:1337/users')
-            .then(res => console.log(res.data))
-            .catch()
-    }, [])
+    // useEffect(() => {
+    //     axios.get('http://localhost:1337/users')
+    //         .then(res => console.log(res.data))
+    //         .catch()
+    // }, [])
 
     return (
         <div className='wrap'>
