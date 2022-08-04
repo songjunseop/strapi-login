@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import './Login.css';
 import axios from "axios";
 // import storage from "../../lib/storage";
-//ㅁㄴㅇㄹ
+
 function Login() {
     const [inputId, setInputId] = useState('');
     const [inputPw, setInputPw] = useState('');
