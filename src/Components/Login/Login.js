@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import './Login.css';
 import axios from "axios";
+// import storage from "../../lib/storage";
 
 function Login() {
     const [inputId, setInputId] = useState('');
@@ -23,17 +24,18 @@ function Login() {
             .then((response) => {
                 console.log('User profile', response.data.user);
                 console.log('User token', response.data.jwt);
+                localStorage.setItem('user', JSON.stringify(response.data.jwt))
             })
             .catch((error) => {
                 console.log('An error occurred:', error.response);
             });
     }
 
-    // useEffect(() => {
-    //     axios.get('http://localhost:1337/users')
-    //         .then(res => console.log(res.data))
-    //         .catch()
-    // }, [])
+    useEffect(() => {
+        axios.get('http://localhost:1337/users')
+            .then(res => console.log(res.data))
+            .catch()
+    }, [])
 
     return (
         <div className='wrap'>
